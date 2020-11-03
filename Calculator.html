@@ -1,0 +1,57 @@
+<html>
+
+	<table border='1'>
+	<tr>
+		<input type="text" id="screen" value = "0">
+	</tr>
+	<tr>
+		<td> <input type="button" value="0"> </td>		
+		<td> <input type="button" value="1" onclick="digits('1')"> </td>
+		<td> <input type="button" value="2" onclick="digits('2')"> </td>
+		<td> <input type="button" value="+" onclick="operations('+')"> </td>
+	<tr>
+		
+		<td> <input type="button" value="3" onclick="digits('3')"> </td>
+		<td> <input type="button" value="4" onclick="digits('4')"> </td>
+		<td> <input type="button" value="5" onclick="digits('5')"> </td>
+		<td> <input type="button" value="-" onclick="operations('-')"> </td>
+	<tr>
+		<td> <input type="button" value="6" onclick="digits('6')"> </td>
+		<td> <input type="button" value="7" onclick="digits('7')"> </td>
+		<td> <input type="button" value="8" onclick="digits('8')"> </td>
+		<td> <input type="button" value="x" onclick="operations('x')"> </td>
+	<tr>
+		<td> <input type="button" value="9" onclick="digits('9')"> </td>
+		<td> <input type="button" value="-" onclick="operations('C')"> </td>
+		<td> <input type="button" value="-" onclick="operations('=')"> </td>
+		<td> <input type="button" value="-" onclick="operations('/')"> </td>
+	</table>
+
+<script>
+	let firstnumber = 0;
+	let sign = "";
+	let ref=window.document.getElementById("screen");
+	function digits(digit) {
+		ref.value = ref.value + digit;
+	}
+	function operations(opt) {
+		if (opt == "C") {
+			ref.value = "";
+		} else if (opt == "=") {
+			if (sign == "+") {
+				ref.value = firstnumber + parseInt(ref.value)
+			else if (sign == "-") {
+				ref.value = firstnumber - parseInt(ref.value)
+			} else if (sign == "x") 
+				ref.value = firstnumber * parseInt(ref.value)
+			} else if (sign == "/") {
+				ref.value == firstnumber / parseInt(ref.value)
+			}
+		} else {
+			firstnumber = parseInt(ref.value);
+			sign = opt;
+			ref.value = "";
+		}
+	}
+		
+</html>
