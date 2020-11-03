@@ -1,0 +1,29 @@
+<html>
+
+<form action="HelloMyFriends.html" method="post" onsubmit="return check()">
+	name:<input id="A"> <span id="errorName" style="color:red;visibility:hidden"> * field required </span> <br>
+	email:<input id="B"> <span id="errorEmail" style="color:red;visibility:hidden"> * field required </span> <br>
+	address:<input id="C"> <span id="errorAddress" style="color:red;visibility:hidden"> * field required </span> <br>
+	<input type="submit">
+</form>
+
+<script>
+	function check() {
+	let result=true;
+		if(document.getElementById("A").value=="") {
+			document.getElementById("errorName").style.visibility='visible';
+			result=false;
+		}
+		if(document.getElementById("B").value=="") {
+			document.getElementById("errorEmail").style.visibility='visible';
+			result=false;
+		}
+		if(document.getElementById("C").value=="") {
+			document.getElementById("errorAddress").style.visibility='visible';
+			result=false;
+		}
+		return result;
+	}
+</script>
+
+</html>
