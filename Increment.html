@@ -1,0 +1,26 @@
+<html>
+
+<input id="no1" value="0" onmouseenter="initialize()"> <br>
+
+<input id="B1" type="button" value="increment" onmousemove="incr()">
+<input id="B1" type="button" value="decrement" onmousemove="decr()"> <br>
+
+<script>
+	let ref=window.document.getElementById("no1");
+
+	function incr() {
+		let data=parseInt(ref.value);
+		data++;
+		ref.value=data;
+	}
+	function decr() {
+		let data=parseInt(ref.value);
+		data--;
+		ref.value=data;
+	}
+	function initialize() {
+		ref.value=0;
+	}
+</script>
+
+</html>
